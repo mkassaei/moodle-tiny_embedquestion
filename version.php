@@ -17,9 +17,9 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package     tiny_embedquestion
- * @copyright   2023 The Open University
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   tiny_embedquestion
+ * @copyright 2023 The Open University
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();

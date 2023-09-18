@@ -16,9 +16,9 @@
 /**
  * Tiny tiny_embedquestion for Moodle.
  *
- * @module      plugintype_pluginname/plugin
- * @copyright   2023 The Open University
- * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @module    plugintype_pluginname/plugin
+ * @copyright 2023 The Open University
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 import {getTinyMCE} from 'editor_tiny/loader';

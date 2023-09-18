@@ -14,18 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
-/**
- * Tiny Tiny  plugin for Moodle.
- *
- * @package     tiny_embedquestion
- * @copyright   2023 The Open University
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 namespace tiny_embedquestion;
 
 use context;
 use editor_tiny\plugin;
 
+/**
+ * Tiny Tiny  plugin for Moodle.
+ *
+ * @package   tiny_embedquestion
+ * @copyright 2023 The Open University
+ * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class plugininfo extends plugin {
 }
