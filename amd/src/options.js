@@ -14,18 +14,34 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Common values helper for the embed question plugin.
+ * Option helper for the Moodle tiny_embedquestion plugin.
  *
- * @module      tiny_embedquestion/common
+ * @module      tiny_embedquestion/options
  * @copyright   2024 The Open University
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+import {getPluginOptionName} from 'editor_tiny/options';
+import {pluginName} from './common';
+const relevantContextId = getPluginOptionName(pluginName, 'relevantContextId');
 
-const component = 'tiny_embedquestion';
+/**
+ * Register the options for the Tiny Equation plugin.
+ *
+ * @param {TinyMCE} editor
+ */
+export const register = (editor) => {
+    const registerOption = editor.options.register;
 
-export default {
-    pluginName: `${component}/plugin`,
-    component: `${component}`,
-    buttonName: `${component}`,
-    icon: `${component}`,
+    registerOption(relevantContextId, {
+        processor: 'number',
+    });
+
 };
+
+/**
+ * Get the context id for the Tiny embed question plugin.
+ *
+ * @param {TinyMCE} editor
+ * @returns {Number} - context id
+ */
+export const getRelevantContextId = (editor) => editor.options.get(relevantContextId);

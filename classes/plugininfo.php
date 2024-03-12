@@ -18,13 +18,44 @@ namespace tiny_embedquestion;
 
 use context;
 use editor_tiny\plugin;
+use editor_tiny\plugin_with_buttons;
+use context_course;
+use editor_tiny\plugin_with_configuration;
 
 /**
- * Tiny Tiny  plugin for Moodle.
+ * Tiny Embed question plugin for Moodle.
  *
- * @package   tiny_embedquestion
- * @copyright 2023 The Open University
- * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     tiny_embedquestion
+ * @copyright   2024 The Open University
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class plugininfo extends plugin {
+class plugininfo extends plugin implements plugin_with_buttons, plugin_with_configuration {
+
+    public static function is_enabled(context $context, array $options, array $fpoptions,
+            ?\editor_tiny\editor $editor = null): bool {
+        // Users must have permission to embed content.
+        // Get the course context, this is the only context we use.
+        $context = context_course::instance(\filter_embedquestion\utils::get_relevant_courseid($context));
+        return has_any_capability(['moodle/question:useall', 'moodle/question:usemine'], $context);
+    }
+
+    public static function get_available_buttons(): array {
+        return [
+            'tiny_embedquestion',
+        ];
+    }
+
+    public static function get_plugin_configuration_for_context(
+        context $context,
+        array $options,
+        array $fpoptions,
+        ?\editor_tiny\editor $editor = null
+    ): array {
+        // Get the course context, this is the only context we use.
+        $context = \context_course::instance(
+            \filter_embedquestion\utils::get_relevant_courseid($context));
+        return [
+            'relevantContextId' => $context->id,
+        ];
+    }
 }

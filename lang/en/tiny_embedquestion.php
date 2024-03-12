@@ -17,15 +17,12 @@
 /**
  * Plugin strings are defined here.
  *
- * @package   tiny_embedquestion
- * @category  string
- * @copyright 2023 The Open University
- * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     tiny_embedquestion
+ * @copyright   2024 The Open University
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-defined('MOODLE_INTERNAL') || die();
 
 $string['embedqcode'] = 'Embed question code';
 $string['loading'] = 'Loading...';
 $string['pluginname'] = 'Embed question';
-$string['privacy:metadata'] = 'The TinyMCE embed question plugin does not store any personal data.';
+$string['privacy:metadata'] = 'The Tiny Embed question plugin does not store any personal data.';

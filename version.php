@@ -17,19 +17,18 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package   tiny_embedquestion
- * @copyright 2023 The Open University
- * @license   https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package     tiny_embedquestion
+ * @copyright   2024 The Open University
+ * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'tiny_embedquestion';
-$plugin->release = '0.1.0';
-$plugin->version = 2023091800;
-$plugin->requires = 2022112800;
-$plugin->maturity = MATURITY_ALPHA;
-
-$plugin->dependencies = ['filter_embedquestion' => 2022032900];
-
-$plugin->outestssufficient = true;
+$plugin->release = '1.0';
+$plugin->version = 2024011100;
+$plugin->requires = 2020061500;
+$plugin->maturity = MATURITY_STABLE;
+$plugin->dependencies = [
+    'filter_embedquestion' => 2022032900,
+];

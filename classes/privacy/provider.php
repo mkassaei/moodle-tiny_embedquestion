@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,21 +12,20 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 namespace tiny_embedquestion\privacy;
 
-use core_privacy\local\metadata\null_provider;
-
 /**
- * Privacy Subsystem implementation for tiny_embedquestion.
+ * Privacy Subsystem implementation for the Tiny embed question for TinyMCE.
  *
- * @package   tiny_embedquestion
- * @copyright 2023 The Open University
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    tiny_embedquestion
+ * @copyright  2024 The Open University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class provider implements null_provider {
-    public static function get_reason() : string {
+class provider implements \core_privacy\local\metadata\null_provider {
+
+    public static function get_reason(): string {
         return 'privacy:metadata';
     }
 }
