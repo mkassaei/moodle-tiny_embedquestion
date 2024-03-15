@@ -22,18 +22,7 @@
  */
 
 import {buttonName} from './common';
-import {addMenubarItem, addToolbarButton} from 'editor_tiny/utils';
-
-/**
- * This function control where the button is display in the editor.
- *
- * @param {Object} toolbar
- * @returns {addToolbarButton}
- */
-const configureToolbar = (toolbar) => {
-    toolbar = addToolbarButton(toolbar, 'formatting', buttonName);
-    return toolbar;
-};
+import {addMenubarItem} from 'editor_tiny/utils';
 
 /**
  * This function control where the button is display in the menu bar of the editor.
@@ -43,7 +32,6 @@ const configureToolbar = (toolbar) => {
  */
 export const configure = (instanceConfig) => {
     return {
-        toolbar: configureToolbar(instanceConfig.toolbar),
         menu: addMenubarItem(instanceConfig.menu, 'insert', buttonName),
     };
 };
