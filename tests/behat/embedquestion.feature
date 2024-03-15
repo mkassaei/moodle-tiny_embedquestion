@@ -30,10 +30,16 @@ Feature: Embed question in the Tiny editor
     And I set the field "Name" to "Test page 01"
     And I set the field "Description" to "Test page description"
     And I set the field "content" to "Test page content"
-    And I click on "Embed question" "button"
+    When I click on the "Insert > Embedded question" menu item for the "Description" TinyMCE editor
     And I set the field "Question category" to "Test questions [embed] (1)"
     And I set the field "id_questionidnumber" to "First question [test1]"
-    And I click on "Embed question" "button" in the "Embed question" "dialogue"
+    And I click on "Embed question" "button" in the "Embedded question" "dialogue"
     And I switch to the "Description" TinyMCE editor iframe
     Then I should see "{Q{embed/test1|"
     And I should see "}Q}Test page description"
+    And I switch to the main frame
+    # Check that reopening the form sets the fields to the current question.
+    And I select the "Q" "text" in the "Description" TinyMCE editor
+    And I click on the "Insert > Embedded question" menu item for the "Description" TinyMCE editor
+    And the field "Question category" matches value "Test questions [embed] (1)"
+    And the field "id_questionidnumber" matches value "First question [test1]"
