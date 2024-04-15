@@ -1,6 +1,6 @@
 # The embed questions TinyMCE editor plugin
 
-This TinyMCE editor plugin makes it much easier to use the [embed questions filter](https://moodle.org/plugins/filter_embedquestion).
+This TinyMCE editor plugin makes it easier to use the [embed questions filter](https://moodle.org/plugins/filter_embedquestion).
 
 [Here is a more detailed description of the functionality](https://github.com/moodleou/moodle-filter_embedquestion/blob/master/internaldoc/functionality.txt).
 

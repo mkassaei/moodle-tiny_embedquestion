@@ -24,11 +24,14 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$plugin->version = 2024011100;
+$plugin->requires = 2022112800;
 $plugin->component = 'tiny_embedquestion';
 $plugin->release = '1.0';
-$plugin->version = 2024011100;
-$plugin->requires = 2020061500;
 $plugin->maturity = MATURITY_STABLE;
+
 $plugin->dependencies = [
     'filter_embedquestion' => 2022032900,
 ];
+
+$plugin->outestssufficient = true;
