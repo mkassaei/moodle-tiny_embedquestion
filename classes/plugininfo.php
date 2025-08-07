@@ -18,7 +18,6 @@ namespace tiny_embedquestion;
 
 use context;
 use editor_tiny\plugin;
-use editor_tiny\plugin_with_buttons;
 use context_course;
 use editor_tiny\plugin_with_configuration;
 
@@ -32,7 +31,7 @@ use editor_tiny\plugin_with_configuration;
 class plugininfo extends plugin implements plugin_with_configuration {
 
     public static function is_enabled(context $context, array $options, array $fpoptions,
-            ?\editor_tiny\editor $editor = null): bool {
+                                      ?\editor_tiny\editor $editor = null): bool {
         // Users must have permission to embed content.
         // Get the course context, this is the only context we use.
         $context = context_course::instance(\filter_embedquestion\utils::get_relevant_courseid($context));

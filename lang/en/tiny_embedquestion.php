@@ -23,5 +23,6 @@
  */
 
 $string['embedqcode'] = 'Embed question code';
+$string['helplinktext'] = 'Embedded question';
 $string['pluginname'] = 'Embedded question';
 $string['privacy:metadata'] = 'The Tiny Embed question plugin does not store any personal data.';

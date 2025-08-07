@@ -34,15 +34,13 @@ use filter_embedquestion\form\embed_options_form;
  * @return string
  */
 function tiny_embedquestion_output_fragment_questionselector(array $args): string {
-    global $CFG;
-    require_once($CFG->dirroot . '/filter/embedquestion/filter.php');
     $context = context::instance_by_id($args['contextId']);
     $mform = new embed_options_form(null, ['context' => $context]);
 
     $currentvalue = $args['embedCode'];
-    if ($currentvalue && preg_match(filter_embedquestion::get_filter_regexp(), $currentvalue, $matches)) {
+    if ($currentvalue && preg_match(\filter_embedquestion\text_filter::get_filter_regexp(), $currentvalue, $matches)) {
 
-        [$embedid, $toform] = filter_embedquestion::parse_embed_code($matches[1]);
+        [$embedid, $toform] = \filter_embedquestion\text_filter::parse_embed_code($matches[1]);
         if ($embedid !== null) {
             $toform['questionidnumber'] = $embedid->questionidnumber;
             $toform['categoryidnumber'] = $embedid->categoryidnumber;

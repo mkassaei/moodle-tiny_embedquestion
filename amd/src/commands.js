@@ -68,6 +68,15 @@ const registerManagerCommand = async(editor, buttonText, buttonImage) => {
 
     editor.ui.registry.addIcon(icon, buttonImage.html);
 
+    // Add the button to the toolbar.
+    editor.ui.registry.addButton(buttonName, {
+        icon: icon,
+        tooltip: buttonText,
+        onAction: async () => {
+            await handleDialogManager();
+        },
+    });
+
     editor.ui.registry.addMenuItem(buttonName, {
         icon: icon,
         text: buttonText,
