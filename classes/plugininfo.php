@@ -30,7 +30,7 @@ use editor_tiny\plugin_with_configuration;
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class plugininfo extends plugin implements plugin_with_configuration {
-
+    #[\Override]
     public static function is_enabled(context $context, array $options, array $fpoptions,
             ?\editor_tiny\editor $editor = null): bool {
         // Users must have permission to embed content.
@@ -39,6 +39,7 @@ class plugininfo extends plugin implements plugin_with_configuration {
         return has_any_capability(['moodle/question:useall', 'moodle/question:usemine'], $context);
     }
 
+    #[\Override]
     public static function get_plugin_configuration_for_context(
         context $context,
         array $options,
